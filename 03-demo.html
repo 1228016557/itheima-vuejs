@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>显示数据:v-text和v-html</title>
+    <script src="vue-2.6.10.js"></script>
+</head>
+<body>
+<div id="app">
+    你好: <span v-text="msg"></span><br>
+    你好: <span v-html="msg"></span>
+
+
+</div>
+<script type="text/javascript">
+    //创建vue对象
+    var app = new Vue({
+        //让vue接管div标签
+        el: "#app",
+        data: {
+            msg: "java"
+        }
+    })
+
+</script>
+</body>
+</html>

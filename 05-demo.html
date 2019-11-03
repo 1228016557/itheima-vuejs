@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件处理v-on</title>
+    <script src="vue-2.6.10.js"></script>
+</head>
+
+<body>
+<div id="app">
+<button @click="show">点我</button>
+    <input type="button" value="点我" @click="show">
+</div>
+<script type="text/javascript">
+   //创建vue对象
+    var app = new Vue({
+       el:"#app",
+        methods:{
+           //定义show方法,弹出提示框
+            show(){
+                alert("弹出来了");
+            }
+        }
+    });
+</script>
+
+
+
+
+
+
+<h1>事件修饰符</h1>
+<p>
+    .stop ：阻止事件冒泡, 也就是当前元素发生事件,但当前元素的父元素不发生该事件<br>
+    .prevent ：阻止默认事件发生<br>
+    .capture ：使用事件捕获模式, 主动获取子元素发生事件, 把获取到的事件当自己的事件执行<br>
+    .self ：只有元素自身触发事件才执行。（冒泡或捕获的都不执行）<br>
+    .once ：只执行一次<br>
+</p>
+
+<div id="app1">
+    <div style="width: 100px; height: 100px; border: 1px solid #fdff17" @click="bor">
+        <button  @click.stop="show">点我</button>
+    </div>
+    <a href="01-demo.html" @click.prevent="">跳转</a>
+</div>
+<script type="text/javascript">
+    //创建vue对象
+    var app = new Vue({
+        el:"#app1",
+        methods:{
+            //定义show方法,弹出提示框
+            show(){
+                alert("我是按钮");
+            },
+            bor(){
+              alert("我是div")
+            }
+        }
+    });
+</script>
+</body>
+</html>

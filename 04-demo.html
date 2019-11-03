@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据双向绑定:v-model</title>
+    <script src="vue-2.6.10.js"></script>
+</head>
+<body>
+<h1>绑定文本框</h1>
+<div id="app">
+    用户名:<input type="text" v-model="username">
+</div>
+<script type="text/javascript">
+    var app = new Vue({
+       el:"#app",
+       data:{
+           username:""
+       }
+    });
+</script>
+
+
+
+
+
+
+<h1>绑定单个复选框</h1>
+<div id="app1">
+    <input type="checkbox" v-model="agree">同意<br>
+</div>
+<script type="text/javascript">
+    var app1 = new Vue({
+        el:"#app1",
+        data:{
+            agree:true
+        }
+    });
+</script>
+
+
+<h1>绑定多个复选框</h1>
+<div id="app2">
+    <input type="checkbox" value="java" v-model="username">java
+    <input type="checkbox" value="php" v-model="username">php
+    <input type="checkbox" value="python" v-model="username">python
+</div>
+<script type="text/javascript">
+    var app2 = new Vue({
+        el:"#app2",
+        data:{
+            //数组中的值就是被选中的元素的value的属性值
+            username:[]
+        }
+    });
+</script>
+
+</body>
+</html>

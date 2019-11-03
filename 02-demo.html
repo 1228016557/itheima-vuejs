@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>钩子函数</title>
+    <script src="vue-2.6.10.js"></script>
+</head>
+
+<body>
+<div id="app">
+    <h1>你的名字:{{msg}}</h1>
+   {{msg}}
+</div>
+<script type="text/javascript">
+   //创建vue对象
+    var app = new Vue({
+       el:"#app",
+        //添加数据
+        data:{
+            msg:"黑马"
+        },
+        //钩子函数
+      created(){
+          alert("asd");
+      }
+    });
+</script>
+</body>
+</html>
